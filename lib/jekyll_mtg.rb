@@ -29,7 +29,7 @@ module JekyllMtg
       response = Net::HTTP.get(uri)
       response = JSON.parse(response)
 
-      "<a href='#{response['scryfall_uri']}>#{card_name}</a>"
+      "<a href='#{response["scryfall_uri"]}>#{card_name}</a>"
     end
 
     Liquid::Template.register_tag 'link_card', self
