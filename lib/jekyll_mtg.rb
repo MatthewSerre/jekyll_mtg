@@ -17,6 +17,8 @@ module JekyllMtg
       @card_info = card_info
     end
 
+    attr_reader :card_info
+
     def render(_context)
       parts = card_info.split('|')
       card_name = parts[0]
