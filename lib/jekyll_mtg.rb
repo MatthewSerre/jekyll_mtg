@@ -31,7 +31,7 @@ module JekyllMtg
 
       "<a href='#{response["scryfall_uri"]}>#{card_name}</a>"
     end
-
-    Liquid::Template.register_tag 'link_card', self
   end
 end
+
+Liquid::Template.register_tag 'link_card', self
