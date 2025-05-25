@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Matthew Serre']
   spec.email = ['matthew.serre+github@gmail.com']
 
-  spec.summary = 'A Jekyll plugin for adding Magic: The Gathering '
+  spec.summary = 'A Jekyll plugin for adding Magic: The Gathering links, images, and decklists via custom Liquid tags'
   spec.homepage = 'https://github.com/MatthewSerre/jekyll_mtg'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.1.0'
