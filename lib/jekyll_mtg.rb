@@ -34,4 +34,4 @@ module JekyllMtg
   end
 end
 
-Liquid::Template.register_tag 'link_card', self
+Liquid::Template.register_tag('link_card', JekyllMtg::LinkCard)
