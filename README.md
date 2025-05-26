@@ -1,6 +1,6 @@
 # JekyllMtg
 
-`jekyll_mtg` is a `jekyll` plugin that helps you reference *Magic: The Gathering* cards in your site content. You can generate links to cards on Scryfall by using a simple `Liquid` tag.
+`jekyll_mtg` is a `jekyll` plugin that helps you reference *Magic: The Gathering* cards in your site content. You can generate links to cards on [Scryfall](https://scryfall.com/) by using a simple `Liquid` tag.
 
 ## Installation
 
@@ -21,17 +21,20 @@ plugins:
 
 ## Usage
 
-### Link a card
+### Link a Card
 
 ```
 # Link to any version of the named card.
-{% link_card Obliterate %}
+{% link_card name="Obliterate" %}
 
 # Or link to a specific version by including the set code.
-{% link_card Obliterate|INV %}
+{% link_card name="Obliterate" set="INV" %}
+
+# Override the card name as the default contents of the anchor tag.
+{% link_card name="Obliterate" set="INV" contents="Obliterate (the one with the good flavor text) %}
 ```
 
-COMING SOON
+### Coming Soon
 
 Embed a card image
 Render a full deck list

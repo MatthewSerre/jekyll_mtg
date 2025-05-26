@@ -2,14 +2,12 @@
 
 require 'jekyll'
 require 'net/http'
-require_relative 'jekyll_mtg/version'
+require_relative 'utils'
 
 module JekyllMtg
   # Links cards
   class LinkCard < Liquid::Tag
-    DEFAULT_REQUEST_FORMAT = 'json'
-    SCRYFALL_BASE_URI = 'https://api.scryfall.com/'
-    SCRYFALL_FUZZY_PATH = '/cards/named'
+    include Utils
 
     def initialize(tag_name, card_info, tokens)
       super
@@ -20,16 +18,15 @@ module JekyllMtg
     attr_reader :card_info
 
     def render(_context)
-      card_name, set_code = card_info.strip.split('|')
-      uri = URI(SCRYFALL_BASE_URI)
-      uri.path = SCRYFALL_FUZZY_PATH
-      params = { fuzzy: card_name, set: set_code, format: DEFAULT_REQUEST_FORMAT }
-      uri.query = URI.encode_www_form(params)
-      headers = { 'Accept' => 'application/json', 'User-Agent' => "JekyllMTG/#{JekyllMtg::VERSION}" }
-      response = Net::HTTP.get(uri, headers)
-      response = JSON.parse(response)
+      parsed_card_info = parse_card_info(card_info)
+      response = fetch_card(parsed_card_info)
 
-      "<a href='#{response["scryfall_uri"]}'>#{card_name}</a>"
+      text = parsed_card_info[:contents] || parsed_card_info[:card_name]
+      if response['scryfall_uri']
+        "<a href='#{response["scryfall_uri"]}'>#{text}</a>"
+      else
+        text
+      end
     end
   end
 end
