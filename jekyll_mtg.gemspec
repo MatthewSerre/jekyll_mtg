@@ -4,7 +4,7 @@ require_relative 'lib/jekyll_mtg/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'jekyll_mtg'
-  spec.version = JekyllMtg::VERSION
+  spec.version = JekyllMTG::VERSION
   spec.authors = ['Matthew Serre']
   spec.email = ['matthew.serre+github@gmail.com']
 

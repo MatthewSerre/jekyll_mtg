@@ -2,7 +2,7 @@
 
 require_relative 'jekyll_mtg/version'
 
-module JekyllMtg
+module JekyllMTG
   # Provides shared methods
   module Utils
     DEFAULT_REQUEST_FORMAT = 'json'
@@ -24,7 +24,7 @@ module JekyllMtg
       uri.path = SCRYFALL_FUZZY_PATH
       params = { fuzzy: parsed_card_info[:card_name], set: parsed_card_info[:set_code], format: DEFAULT_REQUEST_FORMAT }
       uri.query = URI.encode_www_form(params)
-      headers = { 'Accept' => 'application/json', 'User-Agent' => "JekyllMTG/#{JekyllMtg::VERSION}" }
+      headers = { 'Accept' => 'application/json', 'User-Agent' => "JekyllMTG/#{JekyllMTG::VERSION}" }
       response = Net::HTTP.get(uri, headers)
       JSON.parse(response)
     end

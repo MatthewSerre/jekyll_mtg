@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe JekyllMtg do
+RSpec.describe JekyllMTG do
   Jekyll.logger.log_level = :error
 
   it 'has a version number' do
-    expect(JekyllMtg::VERSION).not_to be nil
+    expect(JekyllMTG::VERSION).not_to be nil
   end
 
   def extract_link(contents, card_name)

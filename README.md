@@ -1,4 +1,4 @@
-# JekyllMtg
+# JekyllMTG
 
 `jekyll_mtg` is a `jekyll` plugin that helps you reference *Magic: The Gathering* cards in your site content. You can generate links to cards on [Scryfall](https://scryfall.com/) by using a simple `Liquid` tag.
 

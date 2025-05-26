@@ -4,7 +4,7 @@ require 'jekyll'
 require 'net/http'
 require_relative 'utils'
 
-module JekyllMtg
+module JekyllMTG
   # Links cards
   class LinkCard < Liquid::Tag
     include Utils
@@ -31,4 +31,4 @@ module JekyllMtg
   end
 end
 
-Liquid::Template.register_tag('link_card', JekyllMtg::LinkCard)
+Liquid::Template.register_tag('link_card', JekyllMTG::LinkCard)
