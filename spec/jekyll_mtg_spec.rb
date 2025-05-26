@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe JekyllMtg do
+RSpec.describe JekyllMTG do
   Jekyll.logger.log_level = :error
 
   it 'has a version number' do
-    expect(JekyllMtg::VERSION).not_to be nil
+    expect(JekyllMTG::VERSION).not_to be nil
   end
 
   def extract_link(contents, card_name)
@@ -69,6 +69,10 @@ RSpec.describe JekyllMtg do
     it 'does not link the card when the name ("Mickey Mouse") does not match the name of an existing card' do
       match = extract_link(contents, 'Mickey Mouse')
       expect(match).to be_nil
+    end
+
+    it 'uses the specified contents in the anchor tag' do
+      expect(contents).to include("<a href='https://scryfall.com/card/inv/156/obliterate?utm_source=api'>Obliterate (the one with the good flavor text)</a>")
     end
   end
 end
