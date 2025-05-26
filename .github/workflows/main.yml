@@ -1,11 +1,9 @@
-name: Ruby
+name: main
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-
-  pull_request:
 
 jobs:
   build:
